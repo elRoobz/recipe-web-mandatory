@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    /* dimensions  comment alt shift a*/
+    --width-full: 100%;
+    --width-12col: 1200px;
+
+    /* grid settings */
+    --grid-gap: 10px;
+    --padding-default: 20px;
+
+    /* color swatches */
+    --background-color-navigation: #00000088;
+    --background-color-light: #ededed;
+    --background-color-dark: #111111;
+    --primary-color: #bf5b23;
+    --color-white: #ffffff;
+    --color-dark: #373737;
+    --color_light: #ebebeb;
+    --color-grey: #888888;
+    --catagory-seafood: #3e30e2;
+    --catagory-chicken: #249c8e;
+    --catagory-meats: #d09189;
+    --catagory-veg: #298f3f;
+    --catagory-dessert: #9374eb;
+    --catagory-misc: #392819;
+    --catagory-pasta: #bf5b23;
+    --category-snacks: #9A951E;
+
+}
+
+* {
+    /* Reset CSS */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+body,
+html {
+    width: var(--width-full);
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    background-color: var(--background-color-dark);
+
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto;
+    gap: var(--grid-gap);
+    width: var(--width-full);
+}
+
+.navigation,
+.hero,
+.image-section,
+.footer {
+    width: var(--width-full);
+
+}
+
+.todays_recipes,
+.catagories,
+.content_area {
+    width: var(--width-12col)
+}
+
+.navigation {
+    background-color: var(--background-color-navigation);
+    height: 80px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-container {
+    width: var(--width-12col);
+}
+
+.menu-container ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu-container ul li a {
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--background-color-light);
+}
+
+.menu-container ul li a:hover {
+    color: var(--primary-color);
+
+}
+
+.menu-container ul li {
+    border-right: 1px solid var(--background-color-light)
+}
+
+.menu-container ul li:last-child {
+    border: none;
+}
+
+.hero {
+    background-image: url("https://picsum.photos/1200/800");
+    min-height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    width: var(--width-full);
+    height: auto;
+    margin: 0;
+    border-bottom: 1px solid var(--color-dark)
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 200px auto auto;
+    gap: var(--grid-gap);
+    width: var(--width-12col);
+    height: 100%;
+    color: var(--background-color-light);
+}
+
+.hero-text {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+}
+
+.hero-text h1 span {
+    font-size: 37px;
+    font-weight: 900;
+}
+
+.search-box {
+    grid-column: 2 / span 3;
+    grid-row: 3;
+    position: relative;
+}
+
+.search-box svg {
+    left: 10px;
+    z-index: 10;
+    position: absolute;
+    top: 5px;
+}
+.search-input {
+    background-color: transparent;
+    border: 1px solid var(--background-color-light);
+    border-radius: 5px;
+    padding: 10px 20px 10px 40px;
+    outline: none;
+    color: var(--background-color-light);
+    margin: 0 0 10px 0;
+
+}
+
+.search-input::placeholder {
+    color: var(--background-color-light);
+}
+
+/* Todays recipes area start */
+.todays_recipes {
+    width: var(--width-12col);
+    display: grid;
+    height: fit-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px auto;
+    gap: var(--grid-gap);
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.todays_recipes_headline {
+    height: 60px;
+    width: 100%;
+    color: var(--background-color-light);
+    border-bottom: 1px solid var(--background-color-light);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 70px 0 0 0;
+    font-size: 37px;
+    margin: 0 auto;
+
+}
+
+.todays_recipes_content {
+    display: grid;
+    gap: var(--grid-gap);
+    width: var(--width-12col);
+    grid-template-columns: repeat(4, 1fr);
+    height: fit-content;
+    margin-bottom: 50px;
+}
+
+.todays_recipes_content_block {
+    background-color: var(--background-color-light);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.todays_recipes_content_block_image img {
+    border-radius: 5px 5px 0 0;
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.todays_recipes_content_block_text {
+    padding: 20px;
+    color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.todays_recipes_content_block_text h5 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+
+}
+
+.todays_recipes_content_block_text p {
+    font-size: 16px;
+
+}
+
+.todays_recipes_content_bottom_area {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 0 0;
+}
+
+.todays_recipes_content_bottom_area_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 0 0 10px;
+
+}
+
+.todays_recipes_content_bottom_area_left p {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+}
+
+.todays_recipes_content_bottom_area_left p:last-child {
+    font-weight: 600;
+
+}
+
+/* category color start */
+div[data-category="seafood"] {
+    border-left: 1px solid var(--catagory-seafood);
+
+}
+
+p[data-category="seafood"] {
+    color: var(--catagory-seafood);
+
+}
+
+
+div[data-category="chicken"] {
+    border-left: 1px solid var(--catagory-chicken);
+
+}
+
+p[data-category="chicken"] {
+    color: var(--catagory-chicken);
+
+}
+
+div[data-category="dessert"] {
+    border-left: 1px solid var(--catagory-dessert);
+
+}
+
+p[data-category="dessert"] {
+    color: var(--catagory-dessert);
+
+}
+
+div[data-category="beef/pork"] {
+    border-left: 1px solid var(--catagory-meats);
+
+}
+
+p[data-category="beef/pork"] {
+    color: var(--catagory-meats);
+
+}
+
+/* category color end */
+
+
+.todays_recipes_content_bottom_area_right button {
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-grey);
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.todays_recipes_content_bottom_area_right button a {
+    color: var(--background-color-light);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.category_selection_box {
+    width: var(--width-full);
+    height: 90px;
+    background-color: var(--background-color-light);
+    border-radius: 5px;
+}
+
+/* Todays Recipe area end */
+/* Category Selectin area start */
+.categories {
+    background-color: var(--background-color-light);
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    padding: 10px 50px;
+}
+
+.category_vegan,
+.category_seafood,
+.category_pastas,
+.category_chicken,
+.category_snacks,
+.category_beef,
+.category_dessert {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.category_vegan {
+    color: var(--catagory-veg);
+}
+
+.category_seafood {
+    color: var(--catagory-seafood)
+}
+
+.category_pastas {
+    color: var(--catagory-pasta);
+}
+
+.category_chicken {
+    color: var(--catagory-chicken);
+}
+
+.category_snacks {
+    color: var(--category-snacks)
+}
+
+.category_beef {
+    color: var(--catagory-meats);
+}
+
+.category_dessert {
+    color: var(--catagory-dessert)
+}
+
+.image-section {
+    background-image: url("https://picsum.photos/1200/800");
+    min-height: 800px;
+    clip-path: polygon(0 11%, 100% 23%, 100% 100%, 0% 100%);
+    padding-top: 350px;
+    display: flex;
+    justify-content: center;
+    width: var(--width-full);
+    background-size: cover;
+}
+
+.image-section-textbox {
+    width: var(--width-12col);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-section-textbox-content {
+    background-color: var(--background-color-light);
+    width: 367px;
+    height: 187px;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.h4-bordernone {
+    font-weight: bold;
+    color: var(--color-dark);
+}
+
+h3 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.p {
+    color: var(--color-dark);
+}
+
+.frames-content {
+display: flex;
+flex-wrap: wrap
+}
+
+.frame-content-box-item{
+    background-color: var(--background-color-light);
+    width: 50%;
+    height: 380px;
+}
+
+.box-one, .box-four, .box-five {
+    width: 600px;
+    height: 380px;
+    padding: 80px;
+}
+
+.box-two, .box-three, .box-six {
+    background-image: url("https://picsum.photos/1200/800");
+    width: 600px;
+    height: 380px;
+    background-size: cover;
+}
+.box-one-button a, .box-four-button a, .box-five-button a {
+    background-color: var(--color-dark);
+    width: 179px;
+    height: 40px;
+    margin-top: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--background-color-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400px;
+}
+
+h4{
+    border-left: var(--primary-color) 2px solid;
+    padding-left: 5px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 150px;
+    margin-top: 200px;
+    display:flex;
+    justify-content: center;
+}
+
+.footer-box-one {
+    width: var(--width-12col);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.hero-searchpage {
+    background: var(--background-color-dark)
+    min-height: 600px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    width: var(--width-full);
+    height: auto;
+    margin: 0;
+    border-bottom: 1px solid var(--color-dark)
+}
