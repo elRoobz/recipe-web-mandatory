@@ -21,12 +21,12 @@
     --color-grey: #888888;
     --catagory-seafood: #3e30e2;
     --catagory-chicken: #249c8e;
-    --catagory-meats: #d09189;
+    --catagory-meats: #c98177;
     --catagory-veg: #298f3f;
     --catagory-dessert: #9374eb;
     --catagory-misc: #392819;
     --catagory-pasta: #bf5b23;
-    --category-snacks: #9A951E;
+    --catagory-snacks: #9A951E;
 
 }
 
@@ -57,7 +57,7 @@ html {
 }
 
 .navigation,
-.hero,
+.hero-front-page,
 .image-section,
 .footer {
     width: var(--width-full);
@@ -116,8 +116,8 @@ html {
     border: none;
 }
 
-.hero {
-    background-image: url("https://picsum.photos/1200/800");
+.hero-front-page {
+    background-image: url("../img/cover.png");
     min-height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -126,8 +126,9 @@ html {
     justify-content: center;
     width: var(--width-full);
     height: auto;
-    margin: 0;
-    border-bottom: 1px solid var(--color-dark)
+    margin: 0 0 50px 0;
+    border-bottom: 1px solid var(--color-dark);
+
 }
 
 .hero-container {
@@ -138,17 +139,20 @@ html {
     width: var(--width-12col);
     height: 100%;
     color: var(--background-color-light);
+
 }
 
 .hero-text {
     grid-column: 1 / span 3;
     grid-row: 2;
+
 }
 
 .hero-text h1 {
     font-size: 32px;
     font-weight: 300;
     text-transform: uppercase;
+    margin: 20px 0 20px 0;
 
 }
 
@@ -164,11 +168,12 @@ html {
 }
 
 .search-box svg {
-    left: 10px;
     z-index: 10;
     position: absolute;
+    left: 10px;
     top: 5px;
 }
+
 .search-input {
     background-color: transparent;
     border: 1px solid var(--background-color-light);
@@ -193,7 +198,7 @@ html {
     grid-template-rows: 80px auto;
     gap: var(--grid-gap);
     margin: 0 auto;
-    margin-top: 80px;
+
 }
 
 .todays_recipes_headline {
@@ -216,6 +221,7 @@ html {
     grid-template-columns: repeat(4, 1fr);
     height: fit-content;
     margin-bottom: 50px;
+
 }
 
 .todays_recipes_content_block {
@@ -289,7 +295,8 @@ div[data-category="seafood"] {
 
 }
 
-p[data-category="seafood"] {
+p[data-category="seafood"],
+span[data-category="seafood"] {
     color: var(--catagory-seafood);
 
 }
@@ -300,7 +307,8 @@ div[data-category="chicken"] {
 
 }
 
-p[data-category="chicken"] {
+p[data-category="chicken"],
+span[data-category="chicken"] {
     color: var(--catagory-chicken);
 
 }
@@ -310,7 +318,8 @@ div[data-category="dessert"] {
 
 }
 
-p[data-category="dessert"] {
+p[data-category="dessert"],
+span[data-category="dessert"] {
     color: var(--catagory-dessert);
 
 }
@@ -320,7 +329,8 @@ div[data-category="beef/pork"] {
 
 }
 
-p[data-category="beef/pork"] {
+p[data-category="beef/pork"],
+span[data-category="beef/pork"] {
     color: var(--catagory-meats);
 
 }
@@ -347,130 +357,160 @@ p[data-category="beef/pork"] {
     height: 90px;
     background-color: var(--background-color-light);
     border-radius: 5px;
+
 }
 
-/* Todays Recipe area end */
-/* Category Selectin area start */
 .categories {
     background-color: var(--background-color-light);
     display: flex;
     justify-content: space-evenly;
+    padding: 10px 50px 10px 50px;
     border-radius: 5px;
-    padding: 10px 50px;
+
 }
 
-.category_vegan,
-.category_seafood,
-.category_pastas,
-.category_chicken,
-.category_snacks,
-.category_beef,
-.category_dessert {
+.category-veg,
+.category-seafood,
+.category-pastas,
+.category-chicken,
+.category-snacks,
+.category-meats,
+.category-dessert {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.category_vegan {
+
+
+
+.category-veg {
     color: var(--catagory-veg);
 }
 
-.category_seafood {
-    color: var(--catagory-seafood)
+.category-seafood {
+    color: var(--catagory-seafood);
 }
 
-.category_pastas {
+.category-pastas {
     color: var(--catagory-pasta);
 }
 
-.category_chicken {
+.category-chicken {
     color: var(--catagory-chicken);
 }
 
-.category_snacks {
-    color: var(--category-snacks)
+.category-snacks {
+    color: var(--catagory-snacks);
 }
 
-.category_beef {
+.category-meats {
     color: var(--catagory-meats);
 }
 
-.category_dessert {
-    color: var(--catagory-dessert)
+.category-dessert {
+    color: var(--catagory-dessert);
 }
 
+
 .image-section {
-    background-image: url("https://picsum.photos/1200/800");
-    min-height: 800px;
-    clip-path: polygon(0 11%, 100% 23%, 100% 100%, 0% 100%);
+    background-image: url('../img/lady.jpg');
+    height: 800px;
+    background-size: cover;
     padding-top: 350px;
+    clip-path: polygon(0 18%, 100% 33%, 100% 100%, 0% 100%);
+    margin-bottom: 60px;
     display: flex;
     justify-content: center;
     width: var(--width-full);
-    background-size: cover;
 }
 
-.image-section-textbox {
+.image-section-content {
     width: var(--width-12col);
     display: flex;
     justify-content: flex-end;
 }
 
-.image-section-textbox-content {
+.picture-textbox {
     background-color: var(--background-color-light);
     width: 367px;
     height: 187px;
     padding: 30px;
     border-radius: 5px;
+
 }
 
-.h4-bordernone {
-    font-weight: bold;
+.h6-bordernone {
+    font-size: 16px;
+    font-weight: 700;
     color: var(--color-dark);
+
 }
 
-h3 {
-    color: var(--primary-color);
+h5 {
+    font-size: 22px;
     text-transform: uppercase;
-    padding: 10px 0;
-    font-weight: bold;
+    color: var(--primary-color);
+    padding: 10px 0px;
+
 }
 
-.p {
+p {
+    font-size: 16px;
+    font-weight: 400;
     color: var(--color-dark);
+
 }
 
-.frames-content {
-display: flex;
-flex-wrap: wrap
+.frame-content {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.frame-content-box-item{
+.frame-content-box-item {
     background-color: var(--background-color-light);
     width: 50%;
     height: 380px;
 }
 
-.box-one, .box-four, .box-five {
+.box-one,
+.box-four,
+.box-five {
     width: 600px;
     height: 380px;
     padding: 80px;
 }
 
-.box-two, .box-three, .box-six {
-    background-image: url("https://picsum.photos/1200/800");
+.box-two {
+    background-image: url('../img/chick.jpg');
     width: 600px;
     height: 380px;
     background-size: cover;
 }
-.box-one-button a, .box-four-button a, .box-five-button a {
+
+.box-three {
+    background-image: url('../img/book.jpg');
+    width: 600px;
+    height: 380px;
+    background-size: cover;
+}
+
+.box-six {
+    background-image: url('../img/man.jpg');
+    width: 600px;
+    height: 380px;
+    background-size: cover;
+}
+
+.box-one-button a,
+.box-four-button a,
+.box-five-button a {
     background-color: var(--color-dark);
-    width: 179px;
+    width: 180px;
     height: 40px;
-    margin-top: 40px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -478,10 +518,12 @@ flex-wrap: wrap
     color: var(--background-color-light);
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 400px;
+    font-weight: 400;
+    margin-top: 40px;
+
 }
 
-h4{
+h6 {
     border-left: var(--primary-color) 2px solid;
     padding-left: 5px;
     height: 12px;
@@ -490,28 +532,511 @@ h4{
 }
 
 .footer {
-    background-color: var(--primary-color);
     width: 100%;
     height: 150px;
+    background-color: var(--primary-color);
     margin-top: 200px;
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
-.footer-box-one {
+/* Left section of footer start */
+.footer-box-first {
     width: var(--width-12col);
     height: 100%;
     display: flex;
     align-items: center;
 }
+
+.footer-box-one {
+    display: flex;
+    gap: 4px;
+    margin-right: 10px;
+    width: 25%;
+    ;
+    color: var(--color-dark);
+
+}
+
+.footer-box-two-one {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.footer-box-two {
+    display: flex;
+    flex-direction: column;
+    line-height: 24px;
+    color: var(--color-dark);
+    font-size: 13px;
+}
+
+/* Left section of footer end */
+
+.footer-box-second {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 24px;
+    color: var(--color-dark);
+    font-size: 13px;
+
+}
+
+.footer-box-third {
+    text-align: right;
+    line-height: 24px;
+    width: 50%;
+    color: var(--background-color-light);
+    border-left: 2px solid var(--background-color-light);
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.dark {
+    color: var(--color-dark);
+}
+
+/* Search page CSS start */
 .hero-searchpage {
-    background: var(--background-color-dark)
+    background: var(--background-color-dark);
     min-height: 600px;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     width: var(--width-full);
     height: auto;
-    margin: 0;
-    border-bottom: 1px solid var(--color-dark)
+    border-bottom: 1px solid var(--color-dark);
+
 }
+
+
+
+.search-box-searchpage {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    margin: 100px 0 0 0;
+
+}
+
+
+
+.filter-catagory-checkbox {
+    grid-column: 6 / span 7;
+    grid-row: 2;
+    margin: 100px 0 0 0;
+    background: linear-gradient(90deg, #ededed11, #ededed00);
+    display: flex;
+    flex-wrap: wrap;
+    height: 240px;
+    border-radius: 5px;
+    padding: 25px 20px;
+
+
+
+}
+
+.search-box .search-input {
+    width: 100%;
+}
+
+.fullsearch-headline {
+    width: 100%;
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+
+.filter-catagory-checkbox h3 {
+    width: 100%;
+    margin: 0 0 10px 0;
+
+}
+
+.filter-catagory-checkbox label {
+    width: 50%;
+    height: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+
+}
+
+.filter-catagory-checkbox input[type="radio"] {
+    margin: 0 10px 0 0;
+    height: 22px;
+    width: 22px;
+
+}
+
+.filter-catagory-checkbox input[type="radio"] {
+    accent-color: var(--primary-color);
+
+}
+
+.filter-catagory-checkbox input[type="radio"]#chicken {
+    accent-color: var(--catagory-chicken);
+
+}
+
+.filter-catagory-checkbox input[type="radio"]#Meats {
+    accent-color: var(--catagory-meats);
+
+}
+
+.filter-catagory-checkbox input[type="radio"]#Dessert {
+    accent-color: var(--catagory-dessert);
+
+}
+
+.filter-catagory-checkbox input[type="radio"]#Pasta {
+    accent-color: var(--catagory-pasta);
+
+}
+
+.filter-catagory-checkbox input[type="radio"]#Seafood {
+    accent-color: var(--catagory-seafood);
+
+}
+
+.filter-catagory-checkbox input[type="radio"]#veg {
+    accent-color: var(--catagory-veg);
+
+}
+
+.filter-catagory-checkbox input[type="radio"]#misc {
+    accent-color: var(--catagory-misc);
+
+}
+
+.serp {
+    width: var(--width-full);
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.serp-result-item {
+    width: var(--width-12col);
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--color-dark);
+}
+
+.category-text {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.category {
+    color: var(--background-color-light);
+    padding-top: 50px;
+}
+
+.category h3 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.serp-result-item p {
+    color: var(--background-color-light);
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.serp-result-item h3 {
+    margin: 10px 0 10px 0;
+}
+
+.category h4 {
+    padding-left: 5px;
+    font-size: 16px;
+}
+
+.category h4 span {
+    text-transform: uppercase;
+}
+
+/* Recipe details start */
+
+.paragraph {
+    color: var(--primary-color);
+}
+
+.hero-front-page-details {
+
+    background-image: url("../img/soup.png");
+    display: flex;
+    flex-direction: column;
+    grid-column: 8 / span 5;
+    grid-row: 3;
+    background-repeat: no-repeat;
+    padding: 100px 0 100px 0;
+
+}
+
+* Recipe details start */
+
+.paragraph {
+    color: var(--primary-color);
+}
+
+.hero-container-recipe-details {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--grid-gap);
+    width: var(--width-12col);
+    height: 100%;
+    color: var(--background-color-light);
+}
+
+.hero-front-page-details {
+    background-image: url("../img/soup.png");
+    min-height: 600px;
+    background-repeat: no-repeat;
+    background-position: top right;
+    display: grid;
+    height: auto;
+    /*     grid-template-columns: repeart(12, 1fr); */
+    width: var(--width-12col);
+    margin: 0 auto;
+    margin-top: 200px;
+    align-items: start;
+    color: var(--background-color-light);
+}
+
+.hero-container-desciption {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 600px;
+    justify-content: space-between;
+}
+
+.hero-container-desciption .hero-container-desciption-item {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 0.95rem;
+    color: var(--background-color-light);
+}
+
+
+.hero-container-desciption .hero-container-desciption-item svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    color: var(--primary-color);
+}
+
+.hero-list-ingredients-text h5 {
+    color: var(--background-color-light);
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+.hero-list {
+    display: flex;
+    flex-direction: row;
+    width: var(--width-12col);
+}
+
+.hero-list-one {
+    margin-right: 40px;
+}
+
+.hero-list-one,
+.hero-list-two {
+    width: 269px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.hero-bottom-area {
+    margin: 40px 0 60px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.hero-bottom-area-item a {
+    background-color: var(--background-color-dark);
+    color: var(--background-color-light);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 16px;
+}
+
+.hero-bottom-area-item a svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    color: inherit;
+}
+
+.instructions-list {
+    color: var(--background-color-light);
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 300;
+    background-position: top right;
+    background-size: auto 50%;
+    background-repeat: repeat-y;
+    width: var(--width-12col);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.instructions-list ol {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.instructions-list svg {
+    display: flex;
+    gap: 20px;
+}
+
+/* Recipe details end */
+
+
+/* Recipe details end */
+
+/* Roobz Kitchen Joy */
+
+.hero-front-pageroobz {
+    background-image: url("../img/maincover.png");
+    min-height: 500px;
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-position: top right;
+    display: flex;
+    justify-content: center;
+    width: var(--width-full);
+    height: auto;
+    margin: 0 0 50px 0;
+    border-bottom: 1px solid var(--color-dark);
+
+}
+.todays_recipesroobz {
+    width: var(--width-12col);
+    display: grid;
+    height: fit-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px auto;
+    gap: var(--grid-gap);
+    margin: 0 auto;
+    
+}
+.todaysrecipesheadlinebox {
+align-items: center;
+}
+.todays_recipes_headlineroobz {
+    height: 60px;
+    width: 100%;
+    color: var(--background-color-light);
+    border-bottom: 1px solid var(--background-color-light);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 70px 0 0 0;
+    font-size: 37px;
+    margin: 0 auto;
+    align-items: center;
+
+}
+.div[data-category="seafood"] {
+    border: none;
+
+}
+.todays_recipes_content_block_textroobz h5 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.box-oneroobz,
+.box-fourroobz,
+.box-fiveroobz {
+    width: 600px;
+    height: 380px;
+    padding: 150px;
+    background-color: var(--primary-color);
+     
+}
+
+.box-tworoobz {
+    background-image: url("../img/arnold.png");
+    width: 600px;
+    height: 380px;
+    background-size: cover;
+}
+
+.box-threeroobz {
+    background-image: url("../img/coleman.png");
+    width: 600px;
+    height: 380px;
+    background-size: cover;
+}
+
+.box-sixroobz {
+    background-image: url("../img/bumstead.png");
+    width: 600px;
+    height: 380px;
+    background-size: cover;
+}
+.box-oneroobz h5 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    padding: 10px 0px;
+    color: white;
+
+}
+.box-fourroobz h5 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    padding: 10px 0px;
+    color: white;
+
+}
+
+.box-fiveroobz h5 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    padding: 10px 0px;
+    color: white;
+
+}
+
+.footer-box-tworoobz {
+    display: flex;
+    flex-direction: column;
+    line-height: 24px;
+    color: var(--color-dark);
+    font-size: 20px;
+    margin: auto;
+}
+
